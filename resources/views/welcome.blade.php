@@ -4,12 +4,55 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Ordens de Serviço</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            color: #d70900;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        button {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #d70900;
+            Width: 140px;
+            Height: 31px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #fff;
+            border: solid 2px #d70900;
+        }
+
+        .container {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Hello There!</h1>
+    <div>
+        <img src="https://media.licdn.com/dms/image/C4D0BAQFYeDThWHn9Ag/company-logo_200_200/0/1670531798265?e=1701302400&v=beta&t=-NXlCLiEwaJBQZc_ukDkNwEfY4vJWBQgbmPOLl3XtVE">
+    </div>
+    <div>
+        <h2>Ordens de Serviço</h2>
+    </div>
+    <div class="container">
+        <a href="/service/create">
+            <button>Cadastrar nova OS</button>
+        </a>
+        <br>
+        <a href="/service/show">
+            <button>Mostrar todas OS's</button>
+        </a>
+    </div>
 </body>
 
 </html>
