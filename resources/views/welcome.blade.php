@@ -21,13 +21,13 @@
         button {
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
-            color: #d70900;
+            color: #000;
             Width: 140px;
             Height: 31px;
             cursor: pointer;
             border-radius: 5px;
             background-color: #fff;
-            border: solid 2px #d70900;
+            border: solid 2px #000;
         }
 
         .container {
