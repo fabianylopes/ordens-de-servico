@@ -2,83 +2,69 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OrdemDeServico;
 use Illuminate\Http\Request;
 
 class OrdemDeServicoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return view('welcome');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('ordensdeservico.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $service = new OrdemDeServico;
+
+        $service->nome_tecnico = $request->nome_tecnico;
+        $service->data_solicitacao = $request->data_solicitacao;
+        $service->prazo_atendimento = $request->prazo_atendimento;
+        $service->endereco_atendimento = $request->endereco_atendimento;
+        $service->status = $request->status;
+
+        $service->save();
+
+        return redirect("/service/show");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show()
     {
-        //
+        $services = OrdemDeServico::all();
+
+        return view('ordensdeservico.show', ['services' => $services]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $service = OrdemDeServico::findOrFail($id);
+
+        return view('ordensdeservico.edit', ['service' => $service]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $service = OrdemDeServico::findOrFail($id);
+        $service->update([
+            'nome_tecnico' => $request->nome_tecnico,
+            'data_solicitacao' => $request->data_solicitacao,
+            'prazo_atendimento' => $request->prazo_atendimento,
+            'endereco_atendimento' => $request->endereco_atendimento,
+            'status' => $request->status,
+        ]);
+
+        return redirect("/service/show");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $service = OrdemDeServico::findOrFail($id);
+        $service->delete();
+
+        return redirect('/service/show');
     }
 }
