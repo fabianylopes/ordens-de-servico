@@ -22,7 +22,7 @@
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             color: #000;
-            Width: 140px;
+            Width: 220px;
             Height: 31px;
             cursor: pointer;
             border-radius: 5px;
@@ -32,6 +32,7 @@
 
         .container {
             display: flex;
+            flex-direction: column;
             gap: 10px;
         }
     </style>
@@ -48,9 +49,11 @@
         <a href="/service/create">
             <button>Cadastrar nova OS</button>
         </a>
-        <br>
         <a href="/service/show">
             <button>Mostrar todas OS's</button>
+        </a>
+        <a href="/service/dashboard">
+            <button>Painel de Acompanhamento</button>
         </a>
     </div>
 </body>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\OrdemDeServico;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\App;
 
 class OrdemDeServicoController extends Controller
 {
@@ -37,6 +39,19 @@ class OrdemDeServicoController extends Controller
         $services = OrdemDeServico::all();
 
         return view('ordensdeservico.show', ['services' => $services]);
+    }
+
+    public function dashboard()
+    {
+        App::setLocale('pt_BR');
+        $services = OrdemDeServico::all();
+
+        foreach ($services as $service) {
+            //$service->formattedDate = Carbon::parse($service->data_solicitacao)->format('d/m/Y');
+            $service->timePassed = Carbon::parse($service->data_solicitacao)->diffForHumans();
+        }
+
+        return view('ordensdeservico.dashboard', ['services' => $services]);
     }
 
     public function edit($id)
