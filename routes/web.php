@@ -1,18 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrdemDeServicoController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [OrdemDeServicoController::class, 'index']);
+Route::get('/service/create', [OrdemDeServicoController::class, 'create']);
+Route::post('/service/create', [OrdemDeServicoController::class, 'store']);
+Route::get('/service/show', [OrdemDeServicoController::class, 'show']);
+Route::get('/service/edit/{id}', [OrdemDeServicoController::class, 'edit']);
+Route::put('/service/update/{id}', [OrdemDeServicoController::class, 'update']);
+Route::get('/service/delete/{id}', [OrdemDeServicoController::class, 'destroy']);
