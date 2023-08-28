@@ -4,64 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="{{ resource_path('css/show.css') }}" rel="stylesheet" />
+  <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
   <title>Ordens de Serviço</title>
   <style>
-    label {
-      font-family: 'Roboto', sans-serif;
-      color: #d70900;
-    }
-
-    h2 {
-      color: #d70900;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    button {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-      color: #000;
-      Width: 80px;
-      Height: 24px;
-      cursor: pointer;
-      border-radius: 5px;
-      background-color: #fff;
-      border: solid 2px #000;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    input {
-      border: solid 1px #d70900;
-      border-radius: 5px;
-    }
-
-    input::placeholder {
-      font-family: 'Roboto', sans-serif;
-      color: #222222;
-    }
-
-    table {
-      font-family: 'Roboto', sans-serif;
-      width: 1200px;
-      height: 40px;
-    }
-
-    td {
-      padding: 5px;
-      text-align: center;
-    }
-
-    .header {
-      width: 1200px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
   </style>
 </head>
 

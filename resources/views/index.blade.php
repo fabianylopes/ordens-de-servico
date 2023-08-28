@@ -4,38 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
     <title>Ordens de Serviço</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        h2 {
-            color: #d70900;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        button {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-            color: #000;
-            Width: 220px;
-            Height: 31px;
-            cursor: pointer;
-            border-radius: 5px;
-            background-color: #fff;
-            border: solid 2px #000;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-    </style>
 </head>
 
 <body>
